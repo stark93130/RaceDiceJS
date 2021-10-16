@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+body{
+    background-color:#fff;
+    font-family: 'Lato', sans-serif;
+}
+
+h1{
+    transform:translateX(-90%);
+    animation-name: moveTitle;
+    animation-duration:2s;
+    animation-fill-mode:forwards;
+}
+.navbtn{
+    opacity: 0;
+    animation-name: fade;
+    animation-delay: 2s;
+    animation-duration:3s;
+    animation-fill-mode:forwards;
+}
+.card-player1{
+    opacity: 0;
+    animation-name: fade;
+    animation-delay: 3s;
+    animation-duration:3s;
+    animation-fill-mode:forwards;
+}
+.card-player2{
+    opacity: 0;
+    animation-name: fade;
+    animation-duration:3s;
+    animation-delay: 4s;
+    animation-fill-mode:forwards;
+}
+.card-dice{
+    opacity: 0;
+    animation-name: fade;
+    animation-duration:3s;
+    animation-delay: 5s;
+    animation-fill-mode:forwards;
+}
+.winer{
+    opacity: 1;
+    animation-name: win;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode:forwards;
+}
+@keyframes fade {
+    From{
+        opacity: 0;
+    }
+    To{
+        opacity: 1;
+    }
+}
+@keyframes moveTitle {
+    From{
+        transform: translateX(-90%);
+    }
+    To{
+        transform: translateX(0%);
+    }
+}
+@keyframes win {
+    0%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    25%{
+        opacity: 1;
+        transform: (-10%);
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    75%{
+        opacity: 1;
+        transform: translateY(-10%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

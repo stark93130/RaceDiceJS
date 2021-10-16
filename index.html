@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="jeux de dés projet d'étude study">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="POINSOTTE sylvain">
+    <!-- CSS bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- CSS page -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Jeux de dés</title>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="row">
+          <div class="col-md-12" id="title">
+            <h1 class="text-center">La course de dés <img class="img-fluid" src="assets/img/nav/carStart.png" alt="voiture qui roule"></h1>
+          </div>
+        </div>
+        <div class="game">
+            <div class="navbtn col-md-12">
+              <a class="btn btn-primary " id="newGame" role="button">Nouveau jeu</a>
+              <a class="btn btn-primary" id="Rules" role="button"data-bs-toggle="modal" data-bs-target="#gameRules" >Règles</a>
+              <a type="button" class="btn btn-primary" id="sound"><i class="fas fa-volume-mute"></i> Son</a>    
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <!-- card player 1 -->
+                <div class="card-player1 card border-1">
+                    <div class="card-header border-0">
+                        <h2 id="firstPlayer">Joueur 1</h2>
+                    </div>
+                    <div class="card-body border-0">
+                        <img class="img-fluid" span id="Player1" src="assets/img/players/player1.jpg" alt="voiture joueur1">
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <h3>Total : <span id="globalFirstPlayer">-</span></h3>
+                        
+                        <div class="progress">
+                            <div id="progressFirstPlayer" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                        </div>
+                        <h4 class="mt-2">Points tour : <span id="roundFirstPlayer">-</span></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 d-flex justify-content-center">
+                <!-- card dice -->
+                <div class="card-dice card border-0 align-self-center">
+                    <div class="card-body border">
+                        <img class="img-fluid" span id="dice" src="assets/img/dice/1.svg" alt="dés">
+                    <div class="card-footer bg-transparent border-0">
+                        <div class="btn-group-vertical d-flex align-content-center">
+                            <button class="btn btn-primary" id="roll" role="button">Lancer</button>
+                            <button class="btn btn-primary mt-2" id="hold" role="button"> Valider</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <!-- card player 2 -->
+                <div class="card-player2 card border-1">
+                    <div class="card-header border-0">
+                        <h2 id="secondPlayer">Joueur 2</h2>
+                    </div>
+                    <div class="card-body border-0">
+                        <img class="img-fluid" span id="Player2" src="assets/img/players/player2.jpg" alt="voiture joueur2">
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-4">
+                        <h3>Total : <span id="globalSecondPlayer">-</span></h3> 
+                        <div class="progress">
+                            <div id="progressSecondPlayer" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                        </div>
+                        <h4>Points tour : <span id="roundSecondPlayer">-</span></h4>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+    <!-- Modal -->
+<div class="modal fade" id="gameRules" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Règles du jeux</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p> Pour commencer la partie cliquer sur nouveau jeu<br>
+                Chaque joueur peut lancer le dé plusieurs fois durant un tour.<br>
+                Si le résultat du tirage est supérieur ou égale à 2<br>
+                Le résultat est ajouté au score courant.<br><br>
+                Si le résultat est 1, le score courant est perdu c'est au tour du joueur suivant.</p>
+              <p>Après chaque lancer réussi, le joueur a deux possibilitées :</p>
+              <ul>
+                <li>Lancer le dé pour augmenter son score ( bouton <b class="text-warning">"Lancer"</b> )</li>
+                <li>Sauvegarder le score et l'ajouter à son score total. ( bouton <b class="text-warning">"Valider"</b> )</li>
+              </ul>
+              <p>Le premier joueur qui atteind total de 100 gagne la partie !</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- script -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
